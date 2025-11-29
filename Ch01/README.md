@@ -24,7 +24,7 @@ Can it be expressed as a `do` loop?
 \end{aligned}
 ```
 
-With `do while`:
+With `do` loop:
 
 ```math
 \begin{aligned}
