@@ -5,7 +5,7 @@
 1\. Express the loop
 
 ```math
-\text{for}\ (e_1;\ e_2;\ e_3)\ \text{satement}
+\text{for}\ (e_1;\ e_2;\ e_3)\ \text{statement}
 ```
 
 in terms of a `while` loop.
