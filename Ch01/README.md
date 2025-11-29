@@ -18,9 +18,9 @@ Can it be expressed as a `do` loop?
 \begin{aligned}
 & e_1; \\
 & \text{while } (e_2)\ \{ \\
-&\qquad \text{statement}\\
-&\qquad e_3; \\
-&\}
+& \qquad \text{statement} \\
+& \qquad e_3; \\
+& \}
 \end{aligned}
 ```
 
@@ -30,12 +30,12 @@ With `do while`:
 \begin{aligned}
 & e_1; \\
 & \text{if (}e_2\text{) \{ } \\
-& \text{\qquad do \{} \\
-& \text{\qquad\qquad }statement \\
-& \text{\qquad\qquad }e_3\text{;} \\
-& \text{\qquad \} while (}e_2\text{);} \\
-& \text{\}}
-& \end{aligned}
+& \qquad \text{do}\ \{ \\
+& \qquad\qquad \text{statement} \\
+& \qquad\qquad e_3\text{;} \\
+& \qquad \text{\} while (}e_2\text{);} \\
+& \}
+\end{aligned}
 ```
 
 2\. Code a loop in C in which the unsigned integer control variable **_i_** takes on all values from 0 to and including the maximum unsigned number, `0xFFFFFFFF` (on a 32-bit machine).
