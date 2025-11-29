@@ -10,7 +10,7 @@
 
 in terms of a `while` loop.
 
-Can it be expressed as a do loop?
+Can it be expressed as a `do` loop?
 
 **Answer:**
 
@@ -39,5 +39,9 @@ With `do while`:
 ```
 
 2\. Code a loop in C in which the unsigned integer control variable **_i_** takes on all values from 0 to and including the maximum unsigned number, `0xFFFFFFFF` (on a 32-bit machine).
+
+**Answer:**
+
+[exe_2.c](/Ch01/exe_2.c)
 
 3\. For the more experienced reader: The instruction of the basic and full RISCs defined in this book can be executed with at most two register reads and one write. What are some common or plausible RISC instructions that either need more source operands or need more than one register write?
