@@ -1,5 +1,9 @@
 #include "../includes/utils.h"
 
+/**
+ * Checks if x is a power of 2
+ * @returns 1 if x is a power of 2, 0 otherwise
+ */
 int is_power_of_two(uint32 x) {
     // x != 0 ensures we do not count 0 as a power of 2
     return x != 0 && ((x & (x - 1)) == 0);

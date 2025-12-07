@@ -35,3 +35,31 @@ This can be used to determine if an unsigned integer is of the form $`2^n - 1`$,
 *Demo:* [basics_03.c](/Ch02/basics_03.c)
 
 ---
+
+Use the following formula to turn on the trailing 0's in a word, producing $`x`$ if none (e.g., 10101000 $`\Rightarrow`$ 10101111):
+
+```math
+x\ |\ (x - 1)
+```
+
+*Demo:* [basics_04.c](/Ch02/basics_04.c)
+
+---
+
+Use the following formula to create a word with a single 1-bit at the position of the rightmost 0-bit in $`x`$, producing 0 if none (e.g., 10100111 $`\Rightarrow`$ 00001000):
+
+```math
+\neg x\ \&\ (x + 1)
+```
+
+*Demo:* [basics_05.c](/Ch02/basics_05.c)
+
+---
+
+Use the following formula to create a word with a single 0-bit at the position of the rightmost 1-bit in $`x`$, producing all 1's if none (e.g., 10101000 $`\Rightarrow`$ 11110111):
+
+```math
+\neg x\ |\ (x - 1)
+```
+
+*Demo:* [basics_06.c](/Ch02/basics_06.c)
