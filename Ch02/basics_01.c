@@ -2,8 +2,8 @@
 #include <stdint.h>
 
 void print_bits8(uint32_t x) {
-    int total_bits = 8;
-    for (int i = total_bits - 1; i >= 0; i--) {
+    int32_t total_bits = 8;
+    for (int32_t i = total_bits - 1; i >= 0; i--) {
         uint32_t mask = 1u << i;
         putchar((x & mask) ? '1' : '0');
     }
@@ -31,7 +31,7 @@ int main() {
     uint32_t values[] = {0, 1, 2, 3, 4, 5, 8, 16, 18, 32};
     int32_t n = sizeof(values) / sizeof(values[0]);
 
-    for (int i = 0; i < n; i++) {
+    for (int32_t i = 0; i < n; i++) {
         uint32_t x = values[i];
 
         if (is_power_of_two(x)) {

@@ -2,8 +2,8 @@
 #include <stdint.h>
 
 void print_bits8(uint32_t x) {
-    int total_bits = 8;
-    for (int i = total_bits - 1; i >= 0; i--) {
+    int32_t total_bits = 8;
+    for (int32_t i = total_bits - 1; i >= 0; i--) {
         uint32_t mask = 1u << i;
         putchar((x & mask) ? '1' : '0');
     }
