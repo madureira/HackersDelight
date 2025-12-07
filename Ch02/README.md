@@ -2,7 +2,7 @@
 
 ## 2-1 Manipulating Rightmost Bits
 
-Use the following formula to turn off the rightmost 1-bit in a word, producing 0 if none (eg., 01011000 => 01010000):
+Use the following formula to turn off the rightmost 1-bit in a word, producing 0 if none (eg., 01011000 $`\Rightarrow`$ 01010000):
 
 ```math
 x\ \&\ (x - 1)
