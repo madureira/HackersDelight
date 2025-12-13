@@ -6,9 +6,9 @@ int main() {
     printf("x in binary: ");
     print_bits8(x);
 
-    ui32 y = ~x | (x - 1);
+    ui32 y = ~x | (x - 1u);
 
-    printf("~x | (x - 1) in binary: ");
+    printf("~x | (x - 1u) in binary: ");
     print_bits8(y);
 
     return 0;

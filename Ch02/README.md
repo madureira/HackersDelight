@@ -89,3 +89,25 @@ Use following formula to create a word with 0's at the positions of the trailing
 ```
 
 *Demo:* [basics_08.c](/Ch02/basics_08.c)
+
+---
+
+Use the following formula to isolate the rightmost 1-bit, producing 0 if none (e.g., 01011000 $`\Rightarrow`$ 00001000):
+
+```math
+x\ \&\ (\mathord{-}\!x)
+```
+
+*Demo:* [basics_09.c](/Ch02/basics_09.c)
+
+---
+
+Use the following formula to create a word with 1's at the positions of the rightmost 1-bit and the trailing 0's in $`x`$, producing all 1's if no 1-bit, and the integer 1 if no trailing 0's (e.g., 01011000 $`\Rightarrow`$ 000011111):
+
+```math
+x \oplus  (x-1)
+```
+
+*Demo:* [basics_10.c](/Ch02/basics_10.c)
+
+---

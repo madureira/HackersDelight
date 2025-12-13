@@ -15,9 +15,9 @@ int main() {
     printf("x in binary: ");
     print_bits8(x);
 
-    ui32 y = x & (x - 1); // 01010000
+    ui32 y = x & (x - 1u); // 01010000
 
-    printf("x & (x - 1) in binary: ");
+    printf("x & (x - 1u) in binary: ");
     print_bits8(y);
 
     printf("\nChecking powers of two:\n");
