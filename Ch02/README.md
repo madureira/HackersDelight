@@ -70,9 +70,9 @@ Use one of the following to create a word with 1's at the position of the traili
 
 ```math
 \begin{array}{r l}
-\neg x \,\&\, (x - 1) & \text{, or}\\
-\neg (x \mid \mathord{-}\!x)    & \text{, or}\\
-(x \,\&\, \mathord{-}\!x) - 1   &
+\neg x \mathbin{\&} (x - 1)        & \text{, or}\\
+\neg (x \mathbin{|} {-}x)          & \text{, or}\\
+(x \mathbin{\&} {-}x) - 1          &
 \end{array}
 ```
 
