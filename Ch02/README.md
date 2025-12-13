@@ -71,8 +71,8 @@ Use one of the following to create a word with 1's at the position of the traili
 ```math
 \begin{array}{r}
 \neg x \,\&\, (x - 1)         &\text{, or}\\
-\neg (x \,|\, \text{--}x)     &\text{, or}\\
-(x \,\&\, \text{--}x) - 1     &
+\neg (x \,|\, \mathord{-}x)     &\text{, or}\\
+(x \,\&\, \mathord{-}x) - 1     &
 \end{array}
 ```
 
