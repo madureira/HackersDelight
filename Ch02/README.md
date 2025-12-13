@@ -69,11 +69,11 @@ Use the following formula to create a word with a single 0-bit at the position o
 Use one of the following to create a word with 1's at the position of the trailing 0's i $`x`$, and 0's elsewhere, producing 0 if none (e.g., 01011000 $`\Rightarrow`$ 00000111):
 
 ```math
-\begin{aligned}
+\begin{array}{r}
 \neg x \,\&\, (x - 1)         &\text{, or}\\
 \neg (x \,|\, \text{--}x)     &\text{, or}\\
 (x \,\&\, \text{--}x) - 1     &
-\end{aligned}
+\end{array}
 ```
 
 The first formula has some instruction-level parallelism.
