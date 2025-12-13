@@ -79,3 +79,13 @@ Use one of the following to create a word with 1's at the position of the traili
 The first formula has some instruction-level parallelism.
 
 *Demo:* [basics_07.c](/Ch02/basics_07.c)
+
+---
+
+Use following formula to create a word with 0's at the positions of the trailing 1's in $`x`$, and 1's elsewhere, producing all 1's if none (e.g., 10100111 $`\Rightarrow`$ 11111000):
+
+```math
+\neg x\ \mathbin{|}\ (x + 1)
+```
+
+*Demo:* [basics_08.c](/Ch02/basics_08.c)
