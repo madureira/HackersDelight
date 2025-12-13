@@ -72,7 +72,7 @@ Use one of the following to create a word with 1's at the position of the traili
 \begin{array}{r l}
 \neg x\ \mathbin{\&}\ (x - 1)          & \text{, or}\\
 \neg (x\ \mathbin{|} \mathord{-}\!x)  & \text{, or}\\
-(x\ \mathbin{\&} \mathord{-}\!x) - 1  &
+(x\ \mathbin{\&}\ \mathord{-}\!x) - 1  &
 \end{array}
 ```
 
