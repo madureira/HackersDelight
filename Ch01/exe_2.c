@@ -1,7 +1,7 @@
 #include "../includes/utils.h"
 
 int main() {
-    uint32 i = 0xFFFFFFFF;
+    ui32 i = 0xFFFFFFFF;
 
     do {
         i = i + 1;
