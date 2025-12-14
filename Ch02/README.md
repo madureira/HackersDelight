@@ -122,7 +122,7 @@ x \oplus (x+1)
 
 ---
 
-Use either of the following formulas to turn off the rightmosta contiguous string of 1's (e.g., 01011100 $`\Rightarrow`$ 01000000) [Wood]:
+Use either of the following formulas to turn off the rightmost contiguous string of 1's (e.g., 01011100 $`\Rightarrow`$ 01000000) [Wood]:
 
 ```math
 \begin{array}{r}
