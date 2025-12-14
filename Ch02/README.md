@@ -125,7 +125,7 @@ Use either of the following formulas to turn off the rightmosta contiguous strin
 ```math
 \begin{array}{r}
 (((x\ \mathbin{|} (x-1)) + 1)\ \mathbin{\&}\ x) & \text{, or}\\
-((x\ \mathbin{\&} \mathord{-}\!x) + x)\ \mathbin{\&}\ x
+((x\ \mathbin{\&}-x) + x)\ \mathbin{\&}\ x
 \end{array}
 ```
 
