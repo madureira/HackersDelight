@@ -118,6 +118,8 @@ Use the following formula to create a word with 1's at the positions of the righ
 x \oplus (x+1)
 ```
 
+*Demo:* [basics_11.c](/Ch02/basics_11.c)
+
 ---
 
 Use either of the following formulas to turn off the rightmosta contiguous string of 1's (e.g., 01011100 $`\Rightarrow`$ 01000000) [Wood]:
@@ -130,3 +132,5 @@ Use either of the following formulas to turn off the rightmosta contiguous strin
 ```
 
 These can be used to determine if a nonnegative integer is of the form $`2^j - 2^k`$ for some $`j \geq k \geq 0`$ : apply the formula followed by a 0-test on the result.
+
+*Demo:* [basics_12.c](/Ch02/basics_12.c)
