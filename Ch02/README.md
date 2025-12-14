@@ -111,3 +111,22 @@ x \oplus  (x-1)
 *Demo:* [basics_10.c](/Ch02/basics_10.c)
 
 ---
+
+Use the following formula to create a word with 1's at the positions of the rightmost 0-bit and the trailing 1's in $`x`$, producing all 1's if no 0-bit, and the integer 1 if no trailing 1's (e.g., 01010111 $`\Rightarrow`$ 00001111):
+
+```math
+x \oplus (x+1)
+```
+
+---
+
+Use either of the following formulas to turn off the rightmosta contiguous string of 1's (e.g., 01011100 $`\Rightarrow`$ 01000000) [Wood]:
+
+```math
+\begin{array}{r}
+(((x\ \mathbin{|} (x-1)) + 1) \mathbin{\&}x) & \text{, or}\\
+((x \mathbin{\&}-x) + x)\mathbin{\&} x
+\end{array}
+```
+
+These can be used to determine if a nonnegative integer is of the form $`2^j - 2^k`$ for some $`j \geq k \geq 0`$ : apply the formula followed by a 0-test on the result.
