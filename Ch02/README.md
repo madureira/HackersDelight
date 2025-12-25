@@ -152,11 +152,11 @@ This has two too many 1's and needs to be right-adjusted. This can be accomplish
 In computer algebra notation, the result is $`y`$ in
 
 ```math
-\begin{array}{l}
-s \gets x\ \mathbin{\&}\ \mathord{-}\!x \\
-r \gets s\ + x \\
-y \gets r\ \mathbin{|}\ (((x \oplus r) \stackrel{u}{\gg} 2)\stackrel{u}{\div}s)
-\end{array}
+\begin{aligned}
+\ s &\gets x\ \mathbin{\&} \mathord{-}\!x \\
+r &\gets s + x \\
+y &\gets r \mathbin{|} (((x \oplus r) \stackrel{u}{\gg} 2)\stackrel{u}{\div}s)
+\end{aligned}
 ```
 
 *Demo:* [basics_13.c](/Ch02/basics_13.c)
