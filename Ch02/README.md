@@ -134,3 +134,31 @@ Use either of the following formulas to turn off the rightmost contiguous string
 These can be used to determine if a nonnegative integer is of the form $`2^j - 2^k`$ for some $`j \geq k \geq 0`$ : apply the formula followed by a 0-test on the result.
 
 *Demo:* [basics_12.c](/Ch02/basics_12.c)
+
+---
+
+### A Novel Application
+
+An application of this sort of bit twiddling is the problem of finding the next higher number after a given number that has the same number of 1-bits. You might very well wonder why anyone would want to compute that. It has applications where bit strings are used to represent subsets. The possible members of a set are listed in a linear array, and a subset is represented by a word or sequence of words in which bit $`i`$ is on if member $`i`$ is in the subset. Set unions are computed by logical $`or`$ of the bit strings, intersections by $`and`$'s, and so on.
+
+You might want to iterate through all the subsets of a given size. This is easily done if you have a function that maps a given subset to the next higher number (interpreting the subset string as an integer) with the same number of 1-bits.
+
+A concise algorithm for this operation was devised by R. W. Gosper. Given a word $`x`$ that represents a subset, the idea is to find the rightmost contiguous group of 1's in $`x`$ and the following 0, and “increment” that quantity to the next value that has the same number of 1's. For example, the string xxx0 1111 0000, where xxx represents arbitrary bits, becomes xxx1 0000 0111.
+
+The algorithm first identifies the "smallest" 1-bit in $`x`$, with $`s = x\ \&\ \!-x`$, giving 0000 0001 0000. This is added to $`x`$, giving $`r`$ = xxx1 0000 0000. The 1-bit here is one bit of the result. For the other bits, we need to produce a right-adjusted string of $`n - 1`$ 1's where $`n`$ is the size of the rightmost group of 1's in $`x`$. This can be done by first forming the *exclusive or* of $`r`$ and $`x`$, which gives 0001 1111 0000 in our example.
+
+This has two too many 1's and needs to be right-adjusted. This can be accomplished by dividing it by $`s`$, which right-adjusts it ($`s`$ is a power of 2), and shifting it right two more positions to discard the two unwanted bits. The final resut is the *or* of this and $`r`$.
+
+In computer algebra notation, the result is $`y`$ in
+
+```math
+\begin{array}{l}
+s \gets x\ \mathbin{\&}\ \mathord{-}\!x \\
+r \gets s\ + x \\
+y \gets r\ \mathbin{|}\ (((x \oplus r) \stackrel{u}{\gg} 2)\stackrel{u}{\div}s)
+\end{array}
+```
+
+*Demo:* [basics_13.c](/Ch02/basics_13.c)
+
+---
