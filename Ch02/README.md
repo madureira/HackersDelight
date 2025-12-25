@@ -71,7 +71,7 @@ Use one of the following to create a word with 1's at the position of the traili
 ```math
 \begin{array}{r}
 \neg x\ \mathbin{\&}\ (x - 1)          & \text{, or}\\
-\neg (x\ \mathbin{|} \mathord{-}\!x)   & \text{, or}\\
+\ \neg (x\ \mathbin{|} \mathord{-}\!x)   & \text{, or}\\
 (x\ \mathbin{\&}\ \mathord{-}\!x) - 1  &
 \end{array}
 ```
@@ -160,5 +160,46 @@ y &\gets r \mathbin{|} (((x \oplus r) \stackrel{u}{\gg} 2)\stackrel{u}{\div}s)
 ```
 
 *Demo:* [basics_13.c](/Ch02/basics_13.c)
+
+---
+
+## 2-2 Addition Combined with Logical Operations
+
+## 2-3 Inequalities among Logical and Arithmetic Expressions
+
+## 2-4 Absolute Vaue Function
+
+If your machine does not have an instruction for computing the absolute value, this computation can usually be done in three or four branch-free instructions.
+
+First, compute $`y \gets x \stackrel{s}{\gg} 31`$, and then one of the following:
+
+```math
+\begin{array}{c}
+\text{abs} \\
+(x \oplus y) -y \\
+(x+y) \oplus y \\
+x - (2x\ \&\ y) \\
+\\
+\end{array}
+```
+
+```math
+\begin{array}{c}
+\text{nabs} \\
+y - (x \oplus y) \\
+(y - x) \oplus y \\
+(2x\ \&\ y) - x
+\end{array}
+```
+
+By "$`2x`$" we mean, of course, $`x + x`$ or $`x \ll 1`$.
+
+If you have fast multiplication by variable whose values is $`\plusmn`$ 1, the following will do:
+
+```math
+((x \stackrel{s}{\gg} 30)\ \mathbin{|}\ 1) * x
+```
+
+*Demo:* [basics_14.c](/Ch02/basics_14.c)
 
 ---
