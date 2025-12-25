@@ -194,7 +194,7 @@ y - (x \oplus y) \\
 
 By "$`2x`$" we mean, of course, $`x + x`$ or $`x \ll 1`$.
 
-If you have fast multiplication by variable whose values is $`\plusmn`$ 1, the following will do:
+If you have fast multiplication by variable whose values is $`\pm`$ 1, the following will do:
 
 ```math
 ((x \stackrel{s}{\gg} 30)\ \mathbin{|}\ 1) * x
