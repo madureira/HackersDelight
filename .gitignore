@@ -1,17 +1,7 @@
-# Project specific ignores
-Ch01/exe_2
-Ch02/basics_01
-Ch02/basics_02
-Ch02/basics_03
-Ch02/basics_04
-Ch02/basics_05
-Ch02/basics_06
-Ch02/basics_07
-Ch02/basics_08
-Ch02/basics_09
-Ch02/basics_10
-Ch02/basics_11
-Ch02/basics_12
+# Ignore files with no dot in the name (often compiled binaries)
+*
+!*.*
+!*/
 
 # Prerequisites
 *.d
