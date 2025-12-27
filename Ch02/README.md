@@ -203,3 +203,36 @@ If you have fast multiplication by variable whose values is $`\pm`$ 1, the follo
 *Demo:* [basics_14.c](/Ch02/basics_14.c)
 
 ---
+
+## 2-5 Average of Two Integers
+
+The following formula can be used to compute the average of two unsigned integers $`\lfloor(x + y)/2\rfloor`$, without causing overflow:
+
+```math
+(x\ \&\ y) + ((x\ \oplus\ y) \stackrel{u}{\gg}\ 1)
+```
+
+The formula below computes $`\lfloor(x + y)/2\rfloor`$ for unsigned integers:
+
+```math
+(x\ |\ y) - ((x\ \oplus\ y) \stackrel{u}{\gg}\ 1)
+```
+
+To compute the same quantities ("floor and ceiling averages") for signed integers, use the same formulas, but with the unsigned shift replaced with a signed shift.
+
+For signed integers, one might also want the average with the division by 2 rounded toward 0. Computing this "truncated average" (without causing overflow) is a little more difficult. It can be done by computing the floor average and then correcting it. The correction is to add 1 if, arithmetically, $`x + y`$ is negative and odd. But $`x + y`$ is negative if and only if the result of (3), with the unsigned shift replaced with a signed shift, is negative, This leads to the following method (seven instructions on the basic RISC, after commoning the subexpression $`x\ \oplus y`$):
+
+```math
+\begin{aligned}
+\ t &\gets (x\ \&\ y) + ((x\ \oplus\ y)\ \stackrel{s}{\gg}1); \\
+t &+ ((t \stackrel{u}{\gg}31)\ \&\ (x\ \oplus\ y)) \\
+\end{aligned}
+```
+
+Some common special cases can be done more efficiently. If $`x`$ and $`y`$ are signed integers and known to be nonnegative, then the average can be computed as simply $`(x + y)\ \stackrel{u}{\gg}1`$. The sum can overflow, but the overflow bit is retained in the register that holds the sum, so that the unsigned shift moves the overflow bit to the proper position and supplies a zero sign bit.
+
+If $`x`$ and $`y`$ are unsigned integers and $`x \stackrel{u}{\leq}\ y`$, or if $`x`$ and $`y`$ are signed integers and $`x \leq y`$ (signed comparation), then the average is given by $`x + ((y - x) \stackrel{u}{\gg} 1)`$. These are floor averages, for example, the average of -1 and 0 is -1.
+
+*Demo:* [basics_15.c](/Ch02/basics_15.c)
+
+---

@@ -1,12 +1,12 @@
 #include "../includes/utils.h"
 
 int main() {
-    ui32 x = 0b01011000;
+    u32 x = 0b01011000;
 
     printf("x in binary: ");
     print_bits8(x);
 
-    ui32 y = x & (-x);
+    u32 y = x & (-x);
 
     printf("x & (-x) in binary: ");
     print_bits8(y);

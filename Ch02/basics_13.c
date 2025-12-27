@@ -1,9 +1,9 @@
 #include "../includes/utils.h"
 
-ui32 snoob(ui32 x) {
-    ui32 smallest;
-    ui32 ripple;
-    ui32 ones;
+u32 snoob(u32 x) {
+    u32 smallest;
+    u32 ripple;
+    u32 ones;
                                     // x        = xxx0 1111 0000
     smallest = x & -x;              // smallest = 0000 0001 0000
     ripple = smallest + x;          // ripple   = xxx1 0000 0000
@@ -14,11 +14,11 @@ ui32 snoob(ui32 x) {
 }
 
 int main() {
-    ui32 x = 0b01011100;
+    u32 x = 0b01011100;
     printf("x in binary: ");
     print_bits8(x);
 
-    ui32 y = snoob(x);
+    u32 y = snoob(x);
     printf("snoob(x) in binary: ");
     print_bits8(y);
 
