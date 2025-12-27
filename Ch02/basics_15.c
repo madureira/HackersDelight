@@ -36,7 +36,6 @@ static i32 avg_trunc_i32(i32 x, i32 y) {
 }
 
 // Special case mentioned: x,y signed and known nonnegative.
-// IMPORTANT in C: avoid signed overflow UB by doing the add in unsigned.
 static i32 avg_nonneg_i32_fast(i32 x, i32 y) {
     u32 sum = (u32)x + (u32)y; // wraps in unsigned (well-defined)
     return (i32)(sum >> 1);
@@ -72,7 +71,7 @@ static void demo_i32(i32 x, i32 y) {
     i32 ref_ceil  = (i32)((sum >= 0) ? ((sum + 1) / 2) : -(((-sum)) / 2)); // ceil division by 2
 
     // Trunc toward 0 reference:
-    i32 ref_trunc = (i32)(sum / 2); // in C, int64 / 2 truncs toward 0
+    i32 ref_trunc = (i32)(sum / 2); // in C, int64_t / 2 truncs toward 0
 
     i32 f = avg_floor_i32(x, y);
     i32 c = avg_ceil_i32(x, y);
