@@ -241,7 +241,7 @@ If $`x`$ and $`y`$ are unsigned integers and $`x \stackrel{u}{\leq}\ y`$, or if 
 
 By "sign extension," we mean to consider a certain bit position in a word to be the sign bit, and we wish to propagate that to the left, ignoring any other bits present.
 
-The standards way to do this is with *shift left logical* followed by *shift right signed*. However, if these instructions are slow or nonexistent on your machine, it can be done wth one of the following, where we illustrate by propagating bit position 7 to the left:
+The standards way to do this is with *shift left logical* followed by *shift right signed*. However, if these instructions are slow or nonexistent on your machine, it can be done with one of the following, where we illustrate by propagating bit position 7 to the left:
 
 ```math
 \begin{array}{c}
