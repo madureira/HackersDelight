@@ -20,11 +20,24 @@ typedef unsigned char uchar;
 /**
  * Prints the binary representation of the least significant 8 bits of x.
  */
-void print_bits8(u32 x) {
+static inline void print_bits8(u32 x) {
     i32 total_bits = 8;
     for (i32 i = total_bits - 1; i >= 0; i--) {
         u32 mask = (u32)1u << i;
         putchar((x & mask) ? '1' : '0');
     }
     printf("\n");
+}
+
+/**
+ * Prints the binary representation of a 32-bit unsigned integer with
+ * underscores separating each nibble (4 bits).
+ */
+static inline void print_bits32(u32 v) {
+    for (i32 i = 31; i >= 0; --i) {
+        putchar((v >> i) & 1u ? '1' : '0');
+        if (i % 4 == 0 && i != 0) {
+            putchar('_');
+        }
+    }
 }

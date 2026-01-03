@@ -236,3 +236,23 @@ If $`x`$ and $`y`$ are unsigned integers and $`x \stackrel{u}{\leq}\ y`$, or if 
 *Demo:* [basics_15.c](/Ch02/basics_15.c)
 
 ---
+
+## 2-6 Sign Extension
+
+By "sign extension," we mean to consider a certain bit position in a word to be the sign bit, and we wish to propagate that to the left, ignoring any other bits present.
+
+The standards way to do this is with *shift left logical* followed by *shift right signed*. However, if these instructions are slow or nonexistent on your machine, it can be done wth one of the following, where we illustrate by propagating bit position 7 to the left:
+
+```math
+\begin{array}{c}
+((x + \text{0x00000080})\ \&\ \text{0x000000FF})\ -\ \text{0x00000080} \\
+((x\ \&\ \text{0x000000FF})\ \oplus\ \text{0x00000080})\ -\ \text{0x00000080} \\
+(x\ \&\ \text{0x0000007F})\ -\ (x\ \&\ \text{0x00000080})
+\end{array}
+```
+
+The "+" above can also be "-" or "$`\oplus`$." The second formula is particularly useful if you know that the unwanted high-order bits are all 0's, because then the *and* can be omitted.
+
+*Demo:* [basics_16.c](/Ch02/basics_16.c)
+
+---
