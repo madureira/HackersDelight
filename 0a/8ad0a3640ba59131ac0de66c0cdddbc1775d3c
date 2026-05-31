@@ -1,0 +1,14 @@
+includes/types.h
+  h_832a17fab14d2b 7-9,15,21,25,29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "0a8ad0a3640ba59131ac0de66c0cdddbc1775d3c",
+  "prompts": {},
+  "humans": {
+    "h_832a17fab14d2b": {
+      "author": "Rafael Madureira <rafael.madureira@mercadolivre.com>"
+    }
+  }
+}
