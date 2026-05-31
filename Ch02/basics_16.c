@@ -39,7 +39,7 @@ static i32 sx8_hd3(u32 x) {
 
 static void test(u32 x) {
     i32 ref = sx8_ref(x);
-    i32 sh  = sx8_shift(x);
+    i32 sh = sx8_shift(x);
     i32 hd1 = sx8_hd1(x);
     i32 hd2 = sx8_hd2(x);
     i32 hd3 = sx8_hd3(x);
@@ -49,7 +49,7 @@ static void test(u32 x) {
     printf(")\n");
 
     printf("  ref  : %11d\n", (int)ref);
-    printf("  shift: %11d %s\n", (int)sh,  (sh  == ref) ? "OK" : "DIFF");
+    printf("  shift: %11d %s\n", (int)sh, (sh == ref) ? "OK" : "DIFF");
     printf("  hd1  : %11d %s\n", (int)hd1, (hd1 == ref) ? "OK" : "DIFF");
     printf("  hd2  : %11d %s\n", (int)hd2, (hd2 == ref) ? "OK" : "DIFF");
     printf("  hd3  : %11d %s\n", (int)hd3, (hd3 == ref) ? "OK" : "DIFF");
@@ -57,6 +57,7 @@ static void test(u32 x) {
 }
 
 int main() {
+    // clang-format off
     u32 tests[] = {
         0x00000000u,
         0x00000001u,
@@ -68,8 +69,9 @@ int main() {
         0xABCDEF7Fu,
         0xFFFFFFFFu,
     };
+    // clang-format on
 
-    for (size_t i = 0; i < sizeof(tests) / sizeof(tests[0]); ++i) {
+    for (usize i = 0; i < sizeof(tests) / sizeof(tests[0]); ++i) {
         test(tests[i]);
     }
 

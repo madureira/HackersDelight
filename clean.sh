@@ -3,21 +3,17 @@ set -eu
 
 TARGET_DIR="${1:-.}"
 
-# Absolute path to THIS script
-SCRIPT_PATH="$(cd -P -- "$(dirname -- "$0")" && pwd -P)/$(basename -- "$0")"
-
 echo "These files will be removed:"
 
 # Preview first:
 find "$TARGET_DIR" \
   -path "$TARGET_DIR/.git" -prune -o \
-  -type f -perm -111 ! -samefile "$SCRIPT_PATH" -print
+  -type f ! -name "*.*" -print
 
-echo "Removing executable files..."
+echo "Removing compiled binaries..."
 
-# Uncomment to delete:
 find "$TARGET_DIR" \
   -path "$TARGET_DIR/.git" -prune -o \
-  -type f -perm -111 ! -samefile "$SCRIPT_PATH" -delete
+  -type f ! -name "*.*" -print0 | xargs -0 rm -f
 
 echo "Done."

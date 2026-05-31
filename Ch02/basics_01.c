@@ -13,12 +13,12 @@ int main() {
     u32 x = 0b01011000; // 01011000 in binary
 
     printf("x in binary: ");
-    print_bits8(x);
+    println_bits8(x);
 
     u32 y = x & (x - 1u); // 01010000
 
     printf("x & (x - 1u) in binary: ");
-    print_bits8(y);
+    println_bits8(y);
 
     printf("\nChecking powers of two:\n");
 

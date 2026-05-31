@@ -1,32 +1,21 @@
-#include <stdio.h>
+#ifndef UTILS_H
+#define UTILS_H
+
 #include <stdint.h>
+#include <stdio.h>
 
-typedef int8_t i8;
-typedef int16_t i16;
-typedef int32_t i32;
-typedef int64_t i64;
+#include "types.h"
 
-typedef uint8_t u8;
-typedef uint16_t u16;
-typedef uint32_t u32;
-typedef uint64_t u64;
-
-typedef float f32;
-typedef double f64;
-typedef long double f128;
-
-typedef unsigned char uchar;
+#define BITS8 8
 
 /**
  * Prints the binary representation of the least significant 8 bits of x.
  */
 static inline void print_bits8(u32 x) {
-    i32 total_bits = 8;
-    for (i32 i = total_bits - 1; i >= 0; i--) {
+    for (i32 i = BITS8 - 1; i >= 0; i--) {
         u32 mask = (u32)1u << i;
         putchar((x & mask) ? '1' : '0');
     }
-    printf("\n");
 }
 
 /**
@@ -41,3 +30,23 @@ static inline void print_bits32(u32 v) {
         }
     }
 }
+
+/**
+ * Prints the binary representation of the least significant 8 bits of x,
+ * followed by a newline.
+ */
+static inline void println_bits8(u32 x) {
+    print_bits8(x);
+    putchar('\n');
+}
+
+/**
+ * Prints the binary representation of a 32-bit unsigned integer with
+ * underscores separating each nibble (4 bits), followed by a newline.
+ */
+static inline void println_bits32(u32 v) {
+    print_bits32(v);
+    putchar('\n');
+}
+
+#endif // UTILS_H

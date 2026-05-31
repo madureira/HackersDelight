@@ -39,14 +39,13 @@ static inline i32 abs_mul_pm1(i32 x) {
 int main() {
     // Test values, including the tricky INT32_MIN case.
     // NOTE: abs(INT32_MIN) overflows for int32_t (same issue as standard abs()).
-    i32 tests[] = { 0, 1, -1, 7, -7, 123456, -123456, INT32_MAX, INT32_MIN };
+    i32 tests[] = {0, 1, -1, 7, -7, 123456, -123456, INT32_MAX, INT32_MIN};
 
-    printf("%12s | %12s %12s %12s | %12s %12s %12s | %12s\n",
-           "x", "abs1", "abs2", "abs3", "nabs1", "nabs2", "nabs3", "abs_mul");
+    printf("%12s | %12s %12s %12s | %12s %12s %12s | %12s\n", "x", "abs1", "abs2", "abs3", "nabs1", "nabs2", "nabs3", "abs_mul");
 
     printf("-------------------------------------------------------------------------------------------------------------\n");
 
-    for (size_t i = 0; i < sizeof(tests)/sizeof(tests[0]); i++) {
+    for (usize i = 0; i < sizeof(tests) / sizeof(tests[0]); i++) {
         i32 x = tests[i];
         i32 abs1 = abs_xor_sub(x);
         i32 abs2 = abs_add_xor(x);
@@ -58,8 +57,7 @@ int main() {
 
         i32 abs_mul = abs_mul_pm1(x);
 
-        printf("%12d | %12d %12d %12d | %12d %12d %12d | %12d\n",
-               x, abs1, abs2, abs3, nabs1, nabs2, nabs3, abs_mul);
+        printf("%12d | %12d %12d %12d | %12d %12d %12d | %12d\n", x, abs1, abs2, abs3, nabs1, nabs2, nabs3, abs_mul);
     }
 
     printf("\nNotes:\n");

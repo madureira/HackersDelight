@@ -12,3 +12,23 @@ Implementations from the book "Hacker's Delight" 2nd Edition by Henry S. Warren,
 </p>
 
 :blue_book: [Amazon.com](https://a.co/d/bBxyiJj)
+
+### Running an example
+
+Use the `run.sh` script from the project root, passing the folder and file name without extension:
+
+```bash
+./run.sh Ch02/basics_01.c
+```
+
+### Cleaning compiled binaries
+
+Use `clean.sh` to remove all compiled binaries. It defaults to the project root, or accepts a specific chapter folder:
+
+```bash
+# Clean everything
+./clean.sh
+
+# Clean a specific chapter
+./clean.sh Ch02
+```
