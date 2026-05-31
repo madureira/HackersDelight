@@ -4,22 +4,27 @@
 #include <stddef.h>
 #include <stdint.h>
 
-typedef int8_t i8;
+// clang-format off
+
+/* Signed integers */
+typedef int8_t  i8;
 typedef int16_t i16;
 typedef int32_t i32;
 typedef int64_t i64;
 
-typedef uint8_t u8;
+/* Unsigned integers */
+typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
 
-typedef float f32;
+/* Floating point */
+typedef float  f32;
 typedef double f64;
 
-typedef uint8_t uchar;
-
-typedef size_t usize;
+/* Size types */
+typedef size_t    usize;
 typedef ptrdiff_t isize;
 
+// clang-format on
 #endif // TYPES_H
